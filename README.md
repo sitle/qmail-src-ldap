@@ -26,7 +26,7 @@ apt-get install -y libldap2-dev libssl-dev
 ## To compile
 
 ```bash
-git clone https://github.com/sitle/qmail-src.git
+git clone https://github.com/sitle/qmail-src-ldap.git
 cd qmail-src
 make setup check
 ```
