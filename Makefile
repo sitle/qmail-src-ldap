@@ -19,12 +19,12 @@
 # -DQMQP_COMPRESS to use the QMQP on the fly compression (for clusters)
 # -DQUOTATRASH to include the Trash in the quota calculation (normaly it is not)
 # -DSMTPEXECCHECK to enable smtp DOS/Windows executable detection
-#LDAPFLAGS=-DQLDAP_CLUSTER -DEXTERNAL_TODO -DDASH_EXT -DDATA_COMPRESS -DQMQP_COMPRESS -DSMTPEXECCHECK
+LDAPFLAGS=-DQLDAP_CLUSTER -DEXTERNAL_TODO -DDASH_EXT -DDATA_COMPRESS -DQMQP_COMPRESS -DSMTPEXECCHECK
 
 # Perhaps you have different ldap libraries, change them here
-LDAPLIBS=-L/usr/local/lib -lldap -llber
+LDAPLIBS=-L/usr/lib -lldap -llber
 # and change the location of the include files here
-LDAPINCLUDES=-DLDAP_DEPRECATED=1 -I/usr/local/include
+LDAPINCLUDES=-DLDAP_DEPRECATED=1 -I/usr/include
 # on Slowaris you need -lresolv and probably a LD_RUN_PATH added like this:
 #LDAPLIBS=-L/opt/OpenLDAP/lib -lldap -llber -lresolv -R/opt/OpenLDAP/lib
 # for example on my Linux box I use:
@@ -33,7 +33,7 @@ LDAPINCLUDES=-DLDAP_DEPRECATED=1 -I/usr/local/include
 #LDAPINCLUDES=-DLDAP_DEPRECATED=1 -I/opt/OpenLDAP/include
 
 # ZLIB needed for -DDATA_COMPRESS and -DQMQP_COMPRESS
-#ZLIB=-lz
+ZLIB=-lz
 # or you installed zlib in a different path you can use something like this
 #ZLIB=-L/opt/zlib/lib -lz
 #ZINCLUDES=-I/opt/zlib/include
@@ -43,13 +43,13 @@ LDAPINCLUDES=-DLDAP_DEPRECATED=1 -I/usr/local/include
 # use -DTLS_REMOTE to enable tls support in qmail-remote
 # use -DTLS_SMTPD to enable tls support in qmail-smtpd
 # use -DTLSDEBUG to enable additional tls debug information in qmail-remote
-#TLS=-DTLS_REMOTE -DTLS_SMTPD
+TLS=-DTLS_REMOTE -DTLS_SMTPD
 # Path to OpenSSL includes
-#TLSINCLUDES=-I/usr/local/include
+TLSINCLUDES=-I/usr/include
 # Path to OpenSSL libraries
-#TLSLIBS=-L/usr/local/lib -lssl -lcrypto
+TLSLIBS=-L/usr/lib -lssl -lcrypto
 # Path to OpenSSL binary
-#OPENSSLBIN=/usr/local/bin/openssl
+OPENSSLBIN=/usr/bin/openssl
 #OPENSSLBIN=openssl
 
 # to make the Netscape download progress bar work with qmail-pop3d
@@ -63,11 +63,11 @@ MNW=-DMAKE_NETSCAPE_WORK
 #HDIRMAKE=-DAUTOHOMEDIRMAKE
 
 # on most systems we need this to make auth_pop and auth_imap
-#SHADOWLIBS=-lcrypt
+SHADOWLIBS=-lcrypt
 # OpenBSD and other Systems do not have libcrypt, so comment the line out
 # if you get linking problems.
 # To use shadow passwords under some Linux OS, uncomment the next two lines.
-#SHADOWLIBS=-lcrypt -lshadow
+# SHADOWLIBS=-lcrypt -lshadow
 #SHADOWOPTS=-DPW_SHADOW
 # To use shadow passwords under Solaris, uncomment the SHADOWOPTS line.
 
