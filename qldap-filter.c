@@ -107,7 +107,7 @@ filter_uid(char *uid)
 		return 0;
 
 	if (!filter_start(&filter)  ||
-	    !stralloc_copys(&filter,"(") ||
+	    !stralloc_cats(&filter,"(") ||
 	    !stralloc_cats(&filter, LDAP_UID) ||
 	    !stralloc_cats(&filter, "=") ||
 	    !filter_escape(&filter, uid, str_len(uid)) ||
