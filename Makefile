@@ -57,10 +57,10 @@ OPENSSLBIN=/usr/bin/openssl
 MNW=-DMAKE_NETSCAPE_WORK 
 
 # to enable the auto-maildir-make feature uncomment the next line
-#MDIRMAKE=-DAUTOMAILDIRMAKE
+MDIRMAKE=-DAUTOMAILDIRMAKE
 
 # to enable the auto-homedir-make feature uncomment the next line
-#HDIRMAKE=-DAUTOHOMEDIRMAKE
+HDIRMAKE=-DAUTOHOMEDIRMAKE
 
 # on most systems we need this to make auth_pop and auth_imap
 SHADOWLIBS=-lcrypt
